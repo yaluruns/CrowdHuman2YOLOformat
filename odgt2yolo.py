@@ -1,6 +1,6 @@
 #
 # odgt2yolo.py
-# convert odgt format to YOLO format
+# convert odgt format of https://www.crowdhuman.org to YOLO format.
 #
 
 import os
@@ -16,8 +16,6 @@ import argparse
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[0]  # YOLOv5 root directory
 
-#if str(ROOT) not in sys.path:
-#    sys.path.append(str(ROOT))  # add ROOT to PATH
 ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative
 
 #print(f'ROOT={ROOT}')
@@ -102,9 +100,6 @@ def usage():
 	print(f'usage: python {__file__} filename')
 
 
-#
-# the default is to show vbox.
-#
 def parse_opt(known=False):
 	parser = argparse.ArgumentParser()
 

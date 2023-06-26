@@ -2,6 +2,8 @@
 # display.py
 #
 
+# copyright jay.nam@openstack.co.kr
+
 import os
 import sys
 import json
@@ -15,12 +17,9 @@ import argparse
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[0]  # YOLOv5 root directory
 
-#if str(ROOT) not in sys.path:
-#    sys.path.append(str(ROOT))  # add ROOT to PATH
 ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative
 
 #print(f'ROOT={ROOT}')
-
 
 PERSON_CLASS = 0
 HEAD_CLASS = 1
@@ -37,7 +36,6 @@ def show_with_labels_in_original_format(opt):
 
 		aitem = json.loads(x)
 			
-
 		image_path = f'{ROOT}/images/{which}/{aitem["ID"]}.jpg'
 
 		fig, ax = plt.subplots(1, 1)

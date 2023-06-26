@@ -1,6 +1,8 @@
-"""
-integrity_check.py
-"""
+#
+# integrity_check.py
+# 
+
+# copyright jay.nam@openstack.co.kr
 
 import sys
 import json
