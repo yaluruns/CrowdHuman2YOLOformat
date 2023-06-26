@@ -1,2 +1,2 @@
 # CrowdHuman2YOLOformat
-convert CrowdHuman .odgt file to YOLO label format
+Convert CrowdHuman .odgt file from https://www.crowdhuman.org to YOLO label format.
