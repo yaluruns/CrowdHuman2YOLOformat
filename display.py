@@ -28,7 +28,11 @@ def show_with_labels_in_original_format(opt):
 
 	which = 'val' if opt.val else 'train'
 
-	jason_path = f'{ROOT}/labels/{which}_original_format/{opt.path}.txt'
+	dot = opt.path.rfind('.')
+
+	path = opt.path[:dot] if 0 <= dot else opt.path
+
+	jason_path = f'{ROOT}/labels/{which}_original_format/{path}.txt'
 
 	with open(jason_path, 'r') as rf:
 		x = rf.read()
@@ -131,13 +135,17 @@ def show_with_labels_in_yolo_format(opt):
 
 	which = 'val' if opt.val else 'train'
 
-	jason_path = f'{ROOT}/labels/{which}/{opt.path}.txt'
+	dot = opt.path.rfind('.')
+
+	path = opt.path[:dot] if 0 <= dot else opt.path
+
+	jason_path = f'{ROOT}/labels/{which}/{path}.txt'
 
 	n  = 0;
 
 	with open(jason_path, 'r') as rf:
 
-		image_path = f'{ROOT}/images/{which}/{opt.path}.jpg'
+		image_path = f'{ROOT}/images/{which}/{path}.jpg'
 
 		fig, ax = plt.subplots(1, 1)
 		img = Image.open(image_path)
@@ -198,7 +206,7 @@ def show_with_labels_in_yolo_format(opt):
 
 		img.close()
 
-		plt.title(opt.path)
+		plt.title(path)
 		plt.show()
 
 def show(opt):
